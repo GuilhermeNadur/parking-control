@@ -12,7 +12,7 @@
 
 	<groupId>com.api</groupId>
 	<artifactId>parking-control</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<name>parking-control</name>
 	<description>Project to manage a parking control</description>
 
