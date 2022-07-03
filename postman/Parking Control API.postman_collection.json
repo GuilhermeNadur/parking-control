@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "d8d2070c-c234-4b68-bbac-4f00edd97c9f",
+		"name": "Parking Control API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15828802"
+	},
+	"item": [
+		{
+			"name": "Parking Spot",
+			"item": [
+				{
+					"name": "Create a Parking Spot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"parkingSpotNumber\": \"200A\",\r\n    \"licensePlateCar\": \"AOT7600\",\r\n    \"brandCar\": \"BMW\",\r\n    \"modelCar\": \"X1\",\r\n    \"colorCar\": \"White\",\r\n    \"responsibleName\": \"Ronaldo Pereira\",\r\n    \"apartment\": \"205\",\r\n    \"block\": \"A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/parking-spot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-spot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Parking Spots",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parking-spot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-spot"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "registrationDate,ASC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Parking Spot",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parking-spot/5d90598c-57c7-4f41-94df-ba39b9013246",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-spot",
+								"5d90598c-57c7-4f41-94df-ba39b9013246"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Parking Spot",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parking-spot/1365520b-85aa-491f-8d68-1433c7c65051",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-spot",
+								"1365520b-85aa-491f-8d68-1433c7c65051"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Parking Spot",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"parkingSpotNumber\": \"205B\",\r\n    \"licensePlateCar\": \"RRS8562\",\r\n    \"brandCar\": \"AUDI\",\r\n    \"modelCar\": \"Q5\",\r\n    \"colorCar\": \"Red\",\r\n    \"responsibleName\": \"Guilherme Nadur\",\r\n    \"apartment\": \"205\",\r\n    \"block\": \"B\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/parking-spot/5d90598c-57c7-4f41-94df-ba39b9013246",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-spot",
+								"5d90598c-57c7-4f41-94df-ba39b9013246"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Actuator",
+			"item": [
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actuator/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Health Liveness",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actuator/health/liveness",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator",
+								"health",
+								"liveness"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Health Readiness",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actuator/health/readiness",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator",
+								"health",
+								"readiness"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
