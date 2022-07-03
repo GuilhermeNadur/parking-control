@@ -1,5 +1,7 @@
 package com.api.parkingcontrol.model;
 
+import org.springframework.hateoas.RepresentationModel;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -7,7 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "PARKING_SPOT")
-public class ParkingSpot {
+public class ParkingSpot extends RepresentationModel<ParkingSpot> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
